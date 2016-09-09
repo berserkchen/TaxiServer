@@ -1,8 +1,7 @@
 package com.chaoyang805.taxiserver.controller;
 
 import com.chaoyang805.taxiserver.database.MySqlHelper;
-import com.chaoyang805.taxiserver.model.User;
-import com.sun.glass.ui.Size;
+
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.textline.TextLineCodecFactory;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
@@ -25,13 +24,16 @@ public class TaxiServer {
             acceptor.getSessionConfig().setBothIdleTime(60);
             acceptor.bind(new InetSocketAddress(9988));
             MySqlHelper helper = MySqlHelper.getInstance();
-//            helper.insertUser(new User("chaoydang", "12452f55"));
-//            User user = new User("chaoyang", "1245255");
+
+//            helper.insertUser(new User("chaoyang", "123"));
+//            User user = new User("chaoyang", "123");
 //            user.setLocation(new double[]{102.1254,24.2545});
 //            helper.updateUserLocation(user);
+
+//            helper.deleteUser(new User("chaoyang", "12452f55"));
+
 //            int count = helper.queryAllUser().size();
 //            System.out.println("size = " + count);
-            helper.deleteUser(new User("chaoyang", "12452f55"));
             System.out.println("server started at localhost:9988");
         } catch (IOException e) {
             e.printStackTrace();
